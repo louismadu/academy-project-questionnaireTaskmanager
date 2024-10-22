@@ -1,16 +1,18 @@
 package academy_project.questionaire_task_manager;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 
-public class Participant implements Serializable {
-   private static final long serialVersionUID = 1L; // Unique identifier for serialization
+// Class representing a participant in the trial
+public class Participant {//implements Serializable {
+   //private static final long serialVersionUID = 1L; // Unique identifier for serialization
 
-    private String name;
-    private int age;
-    private String bloodType;
-    private String genotype;
-    private boolean hasHealthConditions;
+    private String name; // Participant's name
+    private int age; // Participant's age
+    private String bloodType; // Participant's blood type
+    private String genotype; // Participant's genotype
+    private boolean hasHealthConditions; // Indicates if the participant has health conditions
 
+    // Constructor to initialize participant attributes
     public Participant(String name, int age, String bloodType, String genotype, boolean hasHealthConditions) {
         this.name = name;
         this.age = age;
@@ -19,7 +21,7 @@ public class Participant implements Serializable {
         this.hasHealthConditions = hasHealthConditions;
     }
 
-    // Getters
+    // Getters for participant attributes
     public String getName() {
         return name;
     }
@@ -39,4 +41,6 @@ public class Participant implements Serializable {
     public boolean isHasHealthConditions() {
         return hasHealthConditions;
     }
+    
+    
 }

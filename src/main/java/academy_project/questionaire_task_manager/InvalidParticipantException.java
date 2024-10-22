@@ -1,11 +1,11 @@
-package academy_project.questionaire_task_manager;
-
-import java.io.Serializable;
-
-public class InvalidParticipantException extends Exception implements Serializable {
-	private static final long serialVersionUID = 1L;
-    public InvalidParticipantException(String message) {
-        super(message);
-    }
-}
-
+//package academy_project.questionaire_task_manager;
+//
+//import java.io.Serializable;
+//
+//// Custom exception class for invalid participants
+//public class InvalidParticipantException extends Exception implements Serializable {
+//	private static final long serialVersionUID = 1L; // Unique identifier for serialization
+//    public InvalidParticipantException(String message) {
+//        super(message); // Pass message to parent Exception class
+//    }
+//}
