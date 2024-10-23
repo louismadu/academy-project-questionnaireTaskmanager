@@ -60,11 +60,15 @@ public class Trial {
 
     // Method to display all participants in the trial
     public void displayParticipants() {
-        System.out.println("Participants in the trial:");
+        System.out.println(ConsoleColors.CYAN + "Participants in the trial:" + ConsoleColors.RESET);
         for (Participant p : participants) {
-            System.out.println("Name: " + p.getName() +"\n"+ "Age: " + p.getAge() +"\n" +
-                               "Blood Type: " +"\n"+ p.getBloodType() +"\n"+ "Genotype: " + p.getGenotype() +"\n"+
-                               "Health Conditions: " + (p.isHasHealthConditions() ? "Yes" : "No")+"\n");
+            System.out.println(ConsoleColors.GREEN + "Name: " + ConsoleColors.RESET + p.getName());
+            System.out.println(ConsoleColors.GREEN + "Age: " + ConsoleColors.RESET + p.getAge());
+            System.out.println(ConsoleColors.GREEN + "Blood Type: " + ConsoleColors.RESET + p.getBloodType());
+            System.out.println(ConsoleColors.GREEN + "Genotype: " + ConsoleColors.RESET + p.getGenotype());
+            System.out.println(ConsoleColors.GREEN + "Health Conditions: " + ConsoleColors.RESET + (p.isHasHealthConditions() ? "Yes" : "No"));
+            System.out.println(); // Add a blank line for better readability
         }
     }
+
 }

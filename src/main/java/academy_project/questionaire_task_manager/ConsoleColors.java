@@ -1,0 +1,26 @@
+package academy_project.questionaire_task_manager;
+
+public class ConsoleColors {
+    // Reset
+    public static final String RESET = "\033[0m";  // Reset color
+
+    // Text colors
+    public static final String BLACK = "\033[0;30m";   // BLACK
+    public static final String RED = "\033[0;31m";     // RED
+    public static final String GREEN = "\033[0;32m";   // GREEN
+    public static final String YELLOW = "\033[0;33m";  // YELLOW
+    public static final String BLUE = "\033[0;34m";    // BLUE
+    public static final String MAGENTA = "\033[0;35m"; // MAGENTA
+    public static final String CYAN = "\033[0;36m";    // CYAN
+    public static final String WHITE = "\033[0;37m";   // WHITE
+
+    // Background colors
+    public static final String BLACK_BG = "\033[40m";   // BLACK
+    public static final String RED_BG = "\033[41m";     // RED
+    public static final String GREEN_BG = "\033[42m";   // GREEN
+    public static final String YELLOW_BG = "\033[43m";  // YELLOW
+    public static final String BLUE_BG = "\033[44m";    // BLUE
+    public static final String MAGENTA_BG = "\033[45m"; // MAGENTA
+    public static final String CYAN_BG = "\033[46m";    // CYAN
+    public static final String WHITE_BG = "\033[47m";   // WHITE
+}

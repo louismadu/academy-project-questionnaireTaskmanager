@@ -3,8 +3,7 @@ package academy_project.questionaire_task_manager;
 //import java.io.Serializable;
 
 // Class representing a participant in the trial
-public class Participant {//implements Serializable {
-   //private static final long serialVersionUID = 1L; // Unique identifier for serialization
+public class Participant {
 
     private String name; // Participant's name
     private int age; // Participant's age

@@ -2,7 +2,6 @@ package academy_project.questionaire_task_manager;
 
 import java.util.Scanner;
 
-// Main class to run the application
 public class Main {
     public static void main(String[] args) {
         Trial trial = new Trial(); // Create a new trial instance
@@ -11,10 +10,10 @@ public class Main {
 
         // Loop to display options until user chooses to exit
         do {
-            System.out.println("1. Add Participant");
-            System.out.println("2. Display Participants");
-            System.out.println("3. Exit");
-            System.out.print("Choose an option: ");
+            System.out.println(ConsoleColors.BLUE + "1. Add Participant" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.BLUE + "2. Display Participants" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.BLUE + "3. Exit" + ConsoleColors.RESET);
+            System.out.print(ConsoleColors.YELLOW + "Choose an option: " + ConsoleColors.RESET);
             choice = scanner.nextLine(); // Read user choice
 
             // Switch-case to handle user choice
@@ -26,10 +25,10 @@ public class Main {
                     trial.displayParticipants(); // Display all participants
                     break;
                 case "3":
-                    System.out.println("Exiting the application. Thank you!"); // Exit message
+                    System.out.println(ConsoleColors.GREEN + "Exiting the application. Thank you!" + ConsoleColors.RESET);
                     break;
                 default:
-                    System.out.println("Invalid option. Please try again."); // Error message for invalid input
+                    System.out.println(ConsoleColors.RED + "Invalid option. Please try again." + ConsoleColors.RESET); // Error message for invalid input
             }
         } while (!choice.equals("3")); // Continue until exit choice
 
