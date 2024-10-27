@@ -3,7 +3,7 @@ package academy_project.questionaire_task_manager;
 import java.util.Scanner;
 
 // Class to manage the questionnaire for participants
-public class Questionnaire {
+public class Questionnaire extends ConsoleColors {
     private Scanner scanner; // Scanner for user input
 
     // Constructor initializes the scanner

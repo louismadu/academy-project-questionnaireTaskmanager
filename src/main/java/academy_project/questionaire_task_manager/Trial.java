@@ -1,18 +1,23 @@
 package academy_project.questionaire_task_manager;
 
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class Trial {
-    private List<Participant> participants; // List to store participants
+    private List<Participant> participantsList; // ArrayList to store participants in order
+    private Map<String, Participant> participantsMap; // HashMap to store participants for quick access
     private Questionnaire questionnaire; // Instance of Questionnaire to collect participant info
 
-    // Constructor initializes the participants list and questionnaire
+    // Constructor initializes the participants list and map
     public Trial() {
-        participants = new ArrayList<>();
+        participantsList = new ArrayList<>(); // Initialize ArrayList
+        participantsMap = new HashMap<>(); // Initialize HashMap
         questionnaire = new Questionnaire();
     }
 
@@ -22,7 +27,8 @@ public class Trial {
         
         // Check selection criteria
         if (isEligible(participant)) {
-            participants.add(participant); // Add participant if eligible
+            participantsList.add(participant); // Add participant to the list
+            participantsMap.put(participant.getName(), participant); // Add participant to the map
             System.out.println("Participant added successfully!");
             saveParticipantsToFile("eligible_participants.txt"); // Automatically save to file
         } else {
@@ -42,7 +48,7 @@ public class Trial {
     // Method to save eligible participants to a file
     public void saveParticipantsToFile(String filename) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-            for (Participant p : participants) {
+            for (Participant p : participantsList) { // Use ArrayList for ordered saving
                 String line = String.format("%s,%d,%s,%s,%b", 
                                              p.getName(), 
                                              p.getAge(), 
@@ -60,8 +66,12 @@ public class Trial {
 
     // Method to display all participants in the trial
     public void displayParticipants() {
+        if (participantsList.isEmpty()) {
+            System.out.println(ConsoleColors.RED + "No participants have been added yet." + ConsoleColors.RESET); // Red text for no participants
+            return; // Exit the method if no participants
+        }
         System.out.println(ConsoleColors.CYAN + "Participants in the trial:" + ConsoleColors.RESET);
-        for (Participant p : participants) {
+        for (Participant p : participantsList) { // Iterate over ArrayList for display
             System.out.println(ConsoleColors.GREEN + "Name: " + ConsoleColors.RESET + p.getName());
             System.out.println(ConsoleColors.GREEN + "Age: " + ConsoleColors.RESET + p.getAge());
             System.out.println(ConsoleColors.GREEN + "Blood Type: " + ConsoleColors.RESET + p.getBloodType());
@@ -71,4 +81,8 @@ public class Trial {
         }
     }
 
+    // Additional method to find a participant by name using HashMap
+    public Participant findParticipantByName(String name) {
+        return participantsMap.get(name); // Retrieve participant from HashMap
+    }
 }
